@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Auction</title>
+    <style>body{padding-top:70px}</style>
+    <!--polyfills-->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <!--typescript compiler-->
+    <script src="node_modules/typescript/lib/typescript.js"></script>
+    <!--SystemJS--loads app dynamically in browser-->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!--Implements Observable pattern-->
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <!--Angular2-->
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <!--Bootstrap, jQuery-->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="config.js"></script>
+</head>
+
+<body>
+    <!--Our first component!-->
+    <auction-application></auction-application>
+    <script>System.import('app');</script>
+</body>
+
+</html>
