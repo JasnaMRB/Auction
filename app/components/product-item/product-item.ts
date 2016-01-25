@@ -1,12 +1,14 @@
 import {Component} from 'angular2/core';
-import StarsComponent from 'app/components/stars/stars';
-import {Product} from 'app/services/product-service';
+import {RouterLink} from 'angular2/router';
+import {Product} from '../../services/product-service';
+import StarsComponent from '../stars/stars';
 
 @Component({
     selector: 'auction-product-item',
     properties: ['product'],
     templateUrl: 'app/components/product-item/product-item.html',
-    directives: [StarsComponent]
+    styleUrls: ['app/components/product-item/product-item.css'],
+    directives: [StarsComponent, RouterLink]
 })
 
 export default class ProductItemComponent {

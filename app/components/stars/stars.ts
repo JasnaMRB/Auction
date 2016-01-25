@@ -1,9 +1,9 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, onInit} from 'angular2/core';
 import {NgFor} from 'angular2/common';
 
 @Component({
     templateUrl: 'app/components/stars/stars.html',
-    styles: [` .starrating { color: #d17581; }`],
+  //  styles: [` .starrating { color: #d17581; }`],
     directives: [NgFor],
     selector: 'auction-stars',
     inputs: ['rating', 'count']

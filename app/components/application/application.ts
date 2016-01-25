@@ -1,29 +1,27 @@
 import {Component} from 'angular2/core';
-import {NgFor} from 'angular2/common';
-import CarouselComponent from 'app/components/carousel/carousel';
-import FooterComponent from 'app/components/footer/footer';
-import NavbarComponent from 'app/components/navbar/navbar';
-import ProductItemComponent from 'app/components/product-item/product-item';
-import SearchComponent from 'app/components/search/search';
-import {Product, ProductService} from 'app/services/product-service';
+import {Route, RouteConfig, RouterOutlet} from 'angular2/router';
+import HomeComponent from '../home/home';
+import FooterComponent from '../footer/footer';
+import NavbarComponent from '../navbar/navbar';
+import SearchComponent from '../search/search';
+import {ProductDetailComponent} from "../product-detail/product-detail";
 
 @Component({
     selector: 'auction-application',
-    providers: [ProductService],
     templateUrl: 'app/components/application/application.html',
-   // styleUrls: ['app/components/application/application.css'],
     directives: [
-        NgFor,
-        CarouselComponent,
-        FooterComponent,
+        RouterOutlet,
         NavbarComponent,
-        ProductItemComponent,
-        SearchComponent]
+        FooterComponent,
+        SearchComponent,
+        HomeComponent]
 })
+@RouteConfig([
+    {path: '/', component: HomeComponent, as 'Home'},
+    {path: '/products/:prodTitle', component: ProductDetailComponent, as 'ProductDetail'}
+])
 
 export default class ApplicationComponent {
-    products: Array<Product> = [];
-    constructor(private productService: ProductService) {
-        this.products = this.productService.getProducts();
-    }
 }
+ 
+ 
