@@ -23,5 +23,3 @@ import {ProductDetailComponent} from "../product-detail/product-detail";
 
 export default class ApplicationComponent {
 }
- 
- 
